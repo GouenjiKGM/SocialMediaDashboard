@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+
+header {
+    background: hsl(232, 19%, 15%);
+    display: flex;
+    justify-content: center;
+    transition: 0.4s;
+}
+
+.header_container {
+    display: flex;
+    width: 75%;
+    height: 250px;
+    font-family: 'Inter', sans-serif;
+    justify-content: space-between;
+    padding: 50px 0px;
+}
+
+.header_container .left h1{
+    color: hsl(0, 0%, 100%);
+    font-weight: 700;
+}
+
+.header_container .left p{
+    color: hsl(228, 34%, 66%);
+    font-weight: 700;
+}
+
+.header_container .right{
+    display: flex;
+}
+
+.header_container .right h2{
+    color: hsl(228, 34%, 66%);
+    font-size: 18px;
+    font-weight: 700;
+    padding-right: 20px;
+}
+
+/* circled checked box on and off */
+.checkbox {
+    position: relative;
+    display: block;
+    width: 55px;
+    height: 25px;
+}
+
+.checkbox input {
+    display: none;
+}
+
+.checkbox--sliding {
+    --checkbox-background: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: var(--checkbox-background);
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+/* Appearance of checkbox before clicking */
+.checkbox--sliding:after {
+    --checkbox-background: hsl(232, 19%, 15%);
+    position: absolute;
+    color: #c2c2c2;
+    height: 20px;
+    width: 20px;
+    content: "";
+    background: var(--checkbox-background);
+    border-radius: 50%;
+    left: 3px;
+    top: 15px;
+    transform: translateY(-60%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0.5px 0px 2px #c8cbcc;
+    transition: 0.4s;
+}
+
+.checkbox--input:checked + .checkbox--sliding {
+    --checkbox-background: hsl(230, 22%, 74%);
+}
+/* Appearance of checkbox */
+.checkbox--input:checked + .checkbox--sliding:after {
+    --checkbox-background: white;
+    background: var(--checkbox-background);
+    left: calc(100% - 24px);
+    content: "";
+    box-shadow: -0.5px 0px 2px rgb(110, 110, 110);
+}
+
+/* Section Social Medias */
+.social_medias {
+    background: hsl(230, 17%, 14%);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 80px;
+}
+
+.social_medias_container {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: -80px;
+    transition: 0.4s;
+}
+
+.medias_box {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 22%;
+    background: hsl(228, 28%, 20%);
+    margin: auto;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+/* Gradient top */
+.medias_box .gradient {
+    width: 100%;
+    height: 4px;
+    background: var(--background-card);
+    border-radius: 5px 5px 0 0px;
+}
+
+.fb {
+    --background-card:hsl(208, 92%, 53%);
+}
+
+.twitter {
+    --background-card:hsl(203, 89%, 53%);
+}
+
+.insta {
+    --background-card: linear-gradient(45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+
+.yout {
+    --background-card:hsl(348, 97%, 39%);
+}
+
+.medias_box .top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding: 40px 0px 12px 0px;
+}
+
+.medias_box .top img {
+    padding-right: 10px;
+}
+
+.medias_box .top span {
+    color: hsl(228, 34%, 66%);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.medias_box .middle h2 {
+    color: white;
+    font-size: 50px;
+}
+
+.medias_box .middle span {
+    color: hsl(228, 34%, 66%);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.medias_box .bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0 20px 0;
+}
+
+.medias_box .bottom img {
+    padding-right: 5px;
+}
+
+.medias_box .bottom span {
+    color: hsl(163, 72%, 41%);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.medias_box:last-child .bottom span {
+    color: hsl(356, 69%, 56%);
+}
+
+/* Hover effect */
+
+.medias_box:hover {
+    background: hsl(227, 28%, 30%);
+    cursor: pointer;
+}
+
+
+/* Overviews Section */
+
+.overviews_container {
+    display: flex;
+    flex-direction: column;
+    width: 74%;
+    padding: 50px 0 0 0;
+}
+
+.overviews_container h2 {
+    color: white;
+    font-size: 25px;
+    letter-spacing: 1px;
+    padding-bottom: 30px;
+}
+
+.overviews-box {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.overviews {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 23%;
+    background: hsl(228, 28%, 20%);
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    transition: 0.4s;
+}
+
+.overviews .top {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.overviews .top p {
+    color: hsl(228, 34%, 66%);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.overviews .bottom {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overviews .bottom p {
+    font-size: 30px;
+    color: white;
+    font-weight: 700;
+}
+
+.overviews .bottom span {
+    color: hsl(163, 72%, 41%);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+.overviews:nth-child(2) .bottom span{
+    color: hsl(356, 69%, 56%);
+}
+
+.overviews:nth-child(7) .bottom span{
+    color: hsl(356, 69%, 56%);
+}
+
+.overviews:nth-child(8) .bottom span{
+    color: hsl(356, 69%, 56%);
+}
+
+/* Hover effect */
+.overviews:hover {
+    background: hsl(227, 28%, 30%);
+    cursor: pointer;
+}
+
+
+/* Version mobile */
+
+@media screen and (max-width: 376px) {
+
+    /* Header */
+    header {
+        height: 320px;
+    }
+    .header_container {
+        flex-direction: column;
+    }
+
+    .header_container .left h1{
+        font-size: 20px;
+    }
+
+    .header_container .left p{
+        font-size: 14px;
+    }
+
+    .header_container .underline {
+        height: 1px;
+        width: 100%;
+        background: hsla(230, 22%, 74%, 0.548);
+    }
+
+    .header_container .right {
+        justify-content: space-between;
+    }
+
+    /* Social medias box */
+    .medias_box {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Overviews box */
+    .overviews {
+        flex-basis: 100%;
+    }
+}
+
+/* White mode */
+.white_bg {
+    background: hsl(0, 0%, 100%);
+}
+
+.white_bg_header {
+    background: hsl(225, 100%, 98%);
+}
+
+.white_bg_card {
+    background: hsl(227, 47%, 96%);
+}
+
+.white_text {
+    color: hsl(228, 12%, 44%);
+}
+
+.white_text_title {
+    color: hsl(230, 17%, 14%);
+}
+
